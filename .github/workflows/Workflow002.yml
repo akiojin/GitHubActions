@@ -11,6 +11,6 @@
         - Release
 jobs:
   Build:
-    runs-on: macos-latest
+    runs-on: ubuntu-latest
     steps:
       - run: echo ${{ inputs.CONFIGURATION }}
