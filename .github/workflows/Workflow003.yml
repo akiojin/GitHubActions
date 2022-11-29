@@ -7,4 +7,4 @@ jobs:
     steps:
       - uses: actions/checkout@v3
         id: checkout
-      - run: echo ${{ toJSON(steps.checkout) }}
+      - run: echo '${{ toJSON(steps) }}'
