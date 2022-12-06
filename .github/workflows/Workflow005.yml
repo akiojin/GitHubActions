@@ -1,4 +1,4 @@
-﻿name: strategy & matrix
+﻿name: strategy and matrix
 on: push
 jobs:
   Build:
