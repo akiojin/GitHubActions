@@ -3,13 +3,23 @@ jobs:
   Build:
     runs-on: ubuntu-latest
     steps:
-      - run: echo github='${{ toJSON(github) }}'
-      - run: echo env='${{ toJSON(env) }}'
-      - run: echo job='${{ toJSON(job) }}'
-      - run: echo steps='${{ toJSON(steps) }}'
-      - run: echo runner='${{ toJSON(runner) }}'
-      - run: echo secrets='${{ toJSON(secrets) }}'
-      - run: echo strategy='${{ toJSON(strategy) }}'
-      - run: echo matrix='${{ toJSON(matrix) }}'
-      - run: echo needs='${{ toJSON(needs) }}'
-      - run: echo inputs='${{ toJSON(inputs) }}'
+      - name: Dump github context
+        run: echo github='${{ toJSON(github) }}'
+      - name: Dump env context
+        run: echo env='${{ toJSON(env) }}'
+      - name: Dump job context
+        run: echo job='${{ toJSON(job) }}'
+      - name: Dump steps context
+        run: echo steps='${{ toJSON(steps) }}'
+      - name: Dump runner context
+        run: echo runner='${{ toJSON(runner) }}'
+      - name: Dump secrets context
+        run: echo secrets='${{ toJSON(secrets) }}'
+      - name: Dump strategy context
+        run: echo strategy='${{ toJSON(strategy) }}'
+      - name: Dump matrix context
+        run: echo matrix='${{ toJSON(matrix) }}'
+      - name: Dump needs context
+        run: echo needs='${{ toJSON(needs) }}'
+      - name: Dump inputs context
+        run: echo inputs='${{ toJSON(inputs) }}'
