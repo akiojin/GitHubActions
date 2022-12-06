@@ -1,0 +1,17 @@
+﻿name: Reusable workflow (Callee)
+on:
+  workflow_call:
+    inputs:
+      username:
+        type: string
+        required: true
+        default: akiojin
+    secrets:
+      password:
+        type: string
+        required: true
+jobs:
+  Login:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo 'username=${{ inputs.username }} password=${{ secrets.password }}'

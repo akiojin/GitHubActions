@@ -1,0 +1,20 @@
+﻿name: Reusable workflow (Caller)
+on:
+  workflow_dispatch:
+    inputs:
+      USERNAME:
+        type: string
+        required: true
+        default: akiojin
+    secrets:
+      PASSWORD:
+        type: string
+        required: true
+jobs:
+  Build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: akiojin/GitHubActions/.github/workflows/Workflow007Callee.yaml@main
+        with:
+          username: ${{ inputs.USERNAME }}
+          password: ${{ inputs.PASSWORD }}
