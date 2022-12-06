@@ -1,4 +1,5 @@
-﻿on: push
+﻿name: Dump context
+on: push
 jobs:
   Build:
     runs-on: ubuntu-latest
