@@ -14,4 +14,4 @@ jobs:
           dotnet-version: ${{ matrix.DOTNET_VERSION }}
       - run: |
           echo strategy.job-index ${{ strategy.job-index }}
-          echo ${{ matrix }}
+          echo '${{ toJSON(matrix) }}'
