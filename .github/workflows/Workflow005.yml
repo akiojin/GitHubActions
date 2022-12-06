@@ -10,4 +10,4 @@ jobs:
     steps:
       - uses: actions/setup-dotnet@v3
         with:
-          dotnet-version ${{ matrix.DOTNET_VERSION }}
+          dotnet-version: ${{ matrix.DOTNET_VERSION }}
