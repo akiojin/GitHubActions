@@ -12,9 +12,8 @@ on:
         required: true
 jobs:
   Build:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: akiojin/GitHubActions/.github/workflows/Workflow007Callee.yaml@main
-        with:
-          username: ${{ inputs.USERNAME }}
-          password: ${{ inputs.PASSWORD }}
+    uses: akiojin/GitHubActions/.github/workflows/Workflow007Callee.yaml@main
+    with:
+      username: ${{ inputs.USERNAME }}
+    secrets:
+      password: ${{ inputs.PASSWORD }}
