@@ -6,7 +6,6 @@ on:
         type: string
         required: true
         default: akiojin
-    secrets:
       PASSWORD:
         type: string
         required: true
