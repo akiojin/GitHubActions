@@ -14,7 +14,8 @@ jobs:
     needs: Build
     runs-on: ubuntu-latest
     steps:
-      - run: echo ${{ needs.Build.outputs }}
+      - name: Show outputs
+        run: echo ${{ needs.Build.outputs }}
   Succeeded:
     needs: [ Build, Test ]
     runs-on: ubuntu-latest
