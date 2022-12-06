@@ -11,7 +11,7 @@ on:
         required: true
 jobs:
   Build:
-    uses: akiojin/GitHubActions/.github/workflows/Workflow007Callee.yaml@main
+    uses: akiojin/GitHubActions/.github/workflows/Workflow007Callee.yml@main
     with:
       username: ${{ inputs.USERNAME }}
     secrets:
