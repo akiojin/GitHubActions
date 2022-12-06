@@ -1,0 +1,16 @@
+﻿on: push
+jobs:
+  Build:
+    runs-on: ubuntu-latest
+    steps:
+      - run: |
+          echo github='${{ toJSON(github) }}'
+          echo env='${{ toJSON(env) }}'
+          echo job='${{ toJSON(job) }}'
+          echo steps='${{ toJSON(steps) }}'
+          echo runner='${{ toJSON(runner) }}'
+          echo secrets='${{ toJSON(secrets) }}'
+          echo strategy='${{ toJSON(strategy) }}'
+          echo matrix='${{ toJSON(matrix) }}'
+          echo needs='${{ toJSON(needs) }}'
+          echo inputs='${{ toJSON(inputs) }}'
