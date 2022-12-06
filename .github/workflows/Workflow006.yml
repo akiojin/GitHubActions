@@ -10,13 +10,13 @@ jobs:
         id: build_step
         run: echo "build_id=${{ github.run_number }}" >> $GITHUB_OUTPUT
       - name: Show outputs
-        run: echo ${{ steps.build_step.outputs }}
+        run: echo '${{ toJSON(steps.build_step.outputs) }}'
   Test:
     needs: Build
     runs-on: ubuntu-latest
     steps:
       - name: Show outputs
-        run: echo ${{ needs.Build.outputs }}
+        run: echo '${{ toJSON(needs.Build.outputs) }}'
   Succeeded:
     needs: [ Build, Test ]
     runs-on: ubuntu-latest
