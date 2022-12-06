@@ -1,4 +1,4 @@
-﻿name: matrix
+﻿name: Strategy & Matrix
 on: push
 jobs:
   Build:
@@ -13,4 +13,5 @@ jobs:
         with:
           dotnet-version: ${{ matrix.DOTNET_VERSION }}
       - run: |
-          echo Index ${{ strategy.job-index }}
+          echo strategy.job-index ${{ strategy.job-index }}
+          echo ${{ matrix }}
