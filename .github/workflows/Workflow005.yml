@@ -1,19 +1,12 @@
-﻿name: strategy and matrix
+﻿name: matrix
 on: push
 jobs:
   Build:
     strategy:
       matrix:
-        DOTNET_VERSION:
-          - '3.x'
-          - '5.x'
-          - '6.x'
-          - '7.0'
-        TARGET:
-          - ubuntu-latest
-          - maxos-latest
-          - windows-latest
-    runs-on: [ ${{ matrix.TARGET }} ]
+        DOTNET_VERSION: [ '3.x', '5.x', '6.x', '7.0' ]
+        OS: [ ubuntu-latest, maxos-latest, windows-latest ]
+    runs-on: ${{ matrix.OS }}
     steps:
       - uses: actions/setup-dotnet@v3
         with:
