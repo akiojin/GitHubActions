@@ -8,6 +8,7 @@ jobs:
         DOTNET_VERSION: [ '1.x', '3.x', '5.x', '6.x', '7.0' ]
         OS: [ ubuntu-latest, maxos-latest, windows-latest ]
     runs-on: ${{ matrix.OS }}
+    timeout-minutes: 5
     steps:
       - uses: actions/setup-dotnet@v3
         with:
