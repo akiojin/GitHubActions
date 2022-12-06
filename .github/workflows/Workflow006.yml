@@ -4,16 +4,14 @@ jobs:
   Build:
     runs-on: ubuntu-latest
     outputs:
-      build_id: ${{ steps.build_step.outputs.build_id }}
+      run_number: ${{ github.run_number }}
     steps:
-      - name: Build
-        id: build_step
-        run: echo "build_id=$BUILD_ID" >> $GITHUB_OUTPUT
+      - run: echo Build
   Test:
     needs: Build
     runs-on: ubuntu-latest
     steps:
-      - run: echo ${{ needs.Build.outputs.build_id }}
+      - run: echo ${{ needs.Build.outputs.run_number }}
   Succeeded:
     needs: [ Build, Test ]
     runs-on: ubuntu-latest
