@@ -3,14 +3,13 @@ jobs:
   Build:
     runs-on: ubuntu-latest
     steps:
-      - run: |
-          echo github='${{ toJSON(github) }}'
-          echo env='${{ toJSON(env) }}'
-          echo job='${{ toJSON(job) }}'
-          echo steps='${{ toJSON(steps) }}'
-          echo runner='${{ toJSON(runner) }}'
-          echo secrets='${{ toJSON(secrets) }}'
-          echo strategy='${{ toJSON(strategy) }}'
-          echo matrix='${{ toJSON(matrix) }}'
-          echo needs='${{ toJSON(needs) }}'
-          echo inputs='${{ toJSON(inputs) }}'
+      - run: echo github='${{ toJSON(github) }}'
+      - run: echo env='${{ toJSON(env) }}'
+      - run: echo job='${{ toJSON(job) }}'
+      - run: echo steps='${{ toJSON(steps) }}'
+      - run: echo runner='${{ toJSON(runner) }}'
+      - run: echo secrets='${{ toJSON(secrets) }}'
+      - run: echo strategy='${{ toJSON(strategy) }}'
+      - run: echo matrix='${{ toJSON(matrix) }}'
+      - run: echo needs='${{ toJSON(needs) }}'
+      - run: echo inputs='${{ toJSON(inputs) }}'
