@@ -16,16 +16,18 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Show outputs
-        run: echo '${{ toJSON(needs.Build.outputs) }}'
-  Succeeded:
+        run: |
+          echo Build job ${{ needs.Build.result }}
+          echo '${{ toJSON(needs.Build.outputs) }}'
+  Success:
     needs: [ Build, Test ]
     runs-on: ubuntu-latest
     if: ${{ success() }}
     steps:
-      - run: echo Succeeded
-  Falied:
+      - run: echo Success
+  Failure:
     needs: [ Build, Test ]
     runs-on: ubuntu-latest
     if: ${{ failure() }}
     steps:
-      - run: echo Failed
+      - run: echo Failure
