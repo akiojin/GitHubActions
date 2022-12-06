@@ -9,7 +9,8 @@ jobs:
       - name: Build
         id: build_step
         run: echo "build_id=${{ github.run_number }}" >> $GITHUB_OUTPUT
-      - run: echo ${{ steps.build_step.outputs.build_id }}
+      - name: Show outputs
+        run: echo ${{ steps.build_step.outputs }}
   Test:
     needs: Build
     runs-on: ubuntu-latest
