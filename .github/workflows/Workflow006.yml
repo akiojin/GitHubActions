@@ -1,7 +1,7 @@
 ﻿name: Build and Test
 on: push
 jobs:
-  Example:
+  Build:
     runs-on: ubuntu-latest
     outputs:
       build_id: ${{ steps.build_step.outputs.build_id }}
