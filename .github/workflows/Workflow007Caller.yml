@@ -10,7 +10,7 @@ on:
         type: string
         required: true
 jobs:
-  Build:
+  Example:
     uses: akiojin/GitHubActions/.github/workflows/Workflow007Callee.yml@main
     with:
       username: ${{ inputs.USERNAME }}
