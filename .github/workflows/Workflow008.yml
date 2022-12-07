@@ -1,0 +1,8 @@
+﻿name: Pull Request
+on: pull_request
+jobs:
+  Example:
+    runs-on: ubuntu-latest
+    if: ${{ github.actor == 'akiojin' }}
+    steps:
+      - run: echo '${{ github.event_name }} base=${{ github.base_ref }} head=${{ github.head_ref }}'
