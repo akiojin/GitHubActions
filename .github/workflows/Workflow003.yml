@@ -1,7 +1,7 @@
 ﻿name: id context
 on: push
 jobs:
-  Build:
+  Example:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3

@@ -11,7 +11,7 @@ on:
         - Debug
         - Release
 jobs:
-  Build:
+  Example:
     runs-on: ubuntu-latest
     steps:
       - run: echo ${{ inputs.CONFIGURATION }}

@@ -1,7 +1,7 @@
 ﻿name: Dump context
 on: push
 jobs:
-  Build:
+  Example:
     runs-on: ubuntu-latest
     steps:
       - name: Dump github context

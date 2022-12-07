@@ -1,7 +1,7 @@
 ﻿name: Strategy & Matrix
 on: push
 jobs:
-  Build:
+  Example:
     strategy:
       fail-fast: false
       matrix:
