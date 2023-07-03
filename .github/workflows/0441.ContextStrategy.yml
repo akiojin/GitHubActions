@@ -7,7 +7,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        DOTNET_VERSION: [ '1.x', '3.x', '5.x', '6.x', '7.0' ]
+        DOTNET_VERSION: [ '5.x', '6.x', '7.0' ]
         OS: [ ubuntu-latest, macos-latest, windows-latest ]
     runs-on: ${{ matrix.OS }}
 
