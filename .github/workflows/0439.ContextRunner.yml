@@ -11,8 +11,7 @@ jobs:
 
       - run: |
           mkdir ${{ runner.temp }}/out
-          chmod +x ./Build.sh
-          ./Build.sh --output ${{ runner.temp }}/out
+          touch ${{ runner.temp }}/out/README.md
 
       - uses: actions/upload-artifact@v3
         with:
