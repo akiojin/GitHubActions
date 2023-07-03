@@ -1,4 +1,4 @@
-name: concurency
+name: Concurency
 
 on:
   workflow_dispatch:
