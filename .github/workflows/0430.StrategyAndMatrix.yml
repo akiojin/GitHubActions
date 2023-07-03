@@ -1,0 +1,20 @@
+name: Strategy & Matrix
+
+on:
+  push:
+  workflow_dispatch:
+
+jobs:
+  Example:
+    runs-on: macos-latest
+    strategy:
+      matrix:
+        BUILD_TARGET:
+          - iOS
+          - Android
+          - Win64
+          - OSXUniversal
+
+    steps:
+      - run: |
+          echo "Target: ${{ matrix.BUILD_TARGET }}"

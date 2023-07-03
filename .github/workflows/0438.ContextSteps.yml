@@ -1,0 +1,13 @@
+name: Context steps
+
+on: push
+
+jobs:
+  Example:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+        id: checkout
+      
+      - run: echo '${{ toJSON(steps) }}'

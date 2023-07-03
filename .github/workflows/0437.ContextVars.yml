@@ -1,0 +1,14 @@
+name: Context vars
+
+on: push
+
+jobs:
+  Example:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Send API request
+        run: |
+          curl -X GET ${{ vars.API_BASE_URL }}/endpoint -o result.json
+        env:
+          MAX_RETRIES: ${{ vars.MAX_RETRIES }}

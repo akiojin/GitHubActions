@@ -1,0 +1,22 @@
+name: Context
+
+on: push
+
+jobs:
+  Example:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Display Context
+        run: |
+          echo "github=${{ toJson(github) }}"
+          echo "env=${{ toJson(env) }}"
+          echo "vars=${{ toJson(vars) }}"
+          echo "steps=${{ toJson(steps) }}"
+          echo "job=${{ toJson(job) }}"
+          echo "runner=${{ toJson(runner) }}"
+          echo "secrets=${{ toJson(secrets) }}"
+          echo "strategy=${{ toJson(strategy) }}"
+          echo "matrix=${{ toJson(matrix) }}"
+          echo "needs=${{ toJson(needs) }}"
+          echo "inputs=${{ toJson(inputs) }}"

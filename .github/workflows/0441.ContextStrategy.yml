@@ -1,0 +1,19 @@
+name: Context strategy
+
+on: push
+
+jobs:
+  Example:
+    strategy:
+      fail-fast: false
+      matrix:
+        DOTNET_VERSION: [ '1.x', '3.x', '5.x', '6.x', '7.0' ]
+        OS: [ ubuntu-latest, macos-latest, windows-latest ]
+    runs-on: ${{ matrix.OS }}
+
+    steps:
+      - uses: actions/setup-dotnet@v3
+        with:
+          dotnet-version: ${{ matrix.DOTNET_VERSION }}
+      - run: |
+          echo '${{ strategy.job-index }}'

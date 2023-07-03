@@ -1,0 +1,43 @@
+name: Environment Variables set or update
+
+on: push
+
+env:
+  CLASS: Thief
+
+jobs:
+  Example1:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Class change 1
+        run: |
+          echo "CLASS=Warrior" >> $GITHUB_ENV
+          echo "My class is $CLASS"
+          echo "My class is ${{ env.CLASS }}"
+
+      - name: What's your class? 1
+        run: |
+          echo "My class is $CLASS"
+          echo "My class is ${{ env.CLASS }}"
+
+      - name: Class change 2
+        run: |
+          echo "CLASS=Wizard" >> $GITHUB_ENV
+          echo "My class is $CLASS"
+          echo "My class is ${{ env.CLASS }}"
+
+      - name: What's your class? 2
+        run: |
+          echo "My class is $CLASS"
+          echo "My class is ${{ env.CLASS }}"
+
+  Example2:
+    runs-on: ubuntu-latest
+    needs: Example1    
+
+    steps:
+      - name: What's your class? 3
+        run: |
+          echo "My class is $CLASS"
+          echo "My class is ${{ env.CLASS }}"

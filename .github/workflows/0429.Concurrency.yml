@@ -1,0 +1,15 @@
+name: concurency
+
+on:
+  workflow_dispatch:
+
+concurrency: ${{ github.workflow }}
+
+jobs:
+  Example:
+    runs-on: ubuntu-latest
+
+    steps:
+      - run: |
+          echo "${{ github.event }}"
+          sleep 30

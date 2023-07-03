@@ -1,0 +1,19 @@
+name: Context runner
+
+on: push
+
+jobs:
+  Example:
+    runs-on: macos-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - run: |
+          mkdir ${{ runner.temp }}/out
+          ./Build.sh --output ${{ runner.temp }}/out
+
+      - uses: actions/upload-artifact@v3
+        with:
+          name: Output
+          path: ${{ runner.temp }}/out

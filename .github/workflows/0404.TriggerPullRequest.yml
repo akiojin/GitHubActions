@@ -1,0 +1,13 @@
+name: Trigger pull_request
+
+on:
+  pull_request:
+    branches:
+      - develop
+
+jobs:
+  Example:
+    runs-on: ubuntu-latest
+
+    steps:
+      - run: echo "PR to the develop branch."

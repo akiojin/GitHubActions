@@ -1,0 +1,39 @@
+name: Environment Variables override
+
+on: push
+
+jobs:
+  Example1:
+    runs-on: ubuntu-latest
+        
+    steps:
+      - name: Override 1
+        env:
+          PATH: override1
+        run: |
+          echo "PATH=$PATH"
+          echo "PATH=${{ env.PATH }}"
+
+      - name: No override 1
+        run: |
+          echo "PATH=$PATH"
+          echo "PATH=${{ env.PATH }}"
+  
+  Example2:
+    runs-on: ubuntu-latest
+    env:
+      PATH: override2
+    
+    steps:
+      - name: Override 2
+        env:
+          PATH: override3
+        run: |
+          echo "PATH=$PATH"
+          echo "PATH=${{ env.PATH }}"
+
+      - name: No override 2
+        run: |
+          echo "PATH=$PATH"
+          echo "PATH=${{ env.PATH }}"
+  
