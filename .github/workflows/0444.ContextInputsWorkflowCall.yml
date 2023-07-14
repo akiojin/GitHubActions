@@ -1,4 +1,4 @@
-name: Context inputs
+name: Context inputs workflow_call
 
 on:
   workflow_call:

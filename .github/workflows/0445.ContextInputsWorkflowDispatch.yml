@@ -1,0 +1,19 @@
+name: Context inputs workflow_dispatch
+
+on:
+  workflow_dispatch:
+    inputs:
+      CONFIGURATION:
+        description: '構成の選択'
+        required: true
+        default: Debug
+        type: choice
+        options:
+        - Debug
+        - Release
+
+jobs:
+  Build:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo ${{ inputs.CONFIGURATION }}
