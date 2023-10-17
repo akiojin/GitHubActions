@@ -1,0 +1,13 @@
+name: Unexpected inputs
+
+on: push
+
+jobs:
+  Example:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          unexpect1: true
+          unexpect2: test
