@@ -8,4 +8,4 @@ runs:
     - name: echo
       shell: bash
       run: |
-        echo "sample"
+        echo "Sample"
