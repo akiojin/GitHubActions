@@ -6,5 +6,6 @@ runs:
   using: "composite"
   steps:
     - name: echo
+      shell: bash
       run: |
         echo "sample"
